@@ -9,6 +9,13 @@ import {IData} from "../models/appInterface";
 })
 
 export class ModalComponent {
+
+  public isAccountOpen: boolean = false;
+  public isUserNameOpen: boolean = false;
+  public isEmailOpen: boolean = false;
+  public isPasswordOpen: boolean = false;
+  public isPinOpen: boolean = false;
+
   constructor(private dataService: DataService) {}
 
   item: IData = {
@@ -30,5 +37,9 @@ export class ModalComponent {
       password: '',
       pin: ''
     }
+  }
+
+  openSelect(event: MouseEvent) {
+    console.log(event);
   }
 }

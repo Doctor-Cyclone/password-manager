@@ -1,8 +1,34 @@
 <div class="modal">
-  <input type="text" placeholder="account" [(ngModel)]="item.account">
-  <input type="text" placeholder="userName" [(ngModel)]="item.userName">
-  <input type="text" placeholder="email" [(ngModel)]="item.email">
-  <input type="text" placeholder="password" [(ngModel)]="item.password">
-  <input type="text" placeholder="pin" [(ngModel)]="item.pin">
+
+  <div class="select">
+    <div class="select__header" (click)="openSelect($event)">
+      <div className="select__title" name="account_head">
+        Account
+      </div>
+    </div>
+    <ul class="select__body" *ngIf="isAccountOpen">
+      <li class="select__option">kirill.demidov.1995@mail.ru</li>
+      <li class="select__option">andreq-demidov@mail.ru</li>
+      <li class="select__option">only.forgame.post@mail.ru</li>
+    </ul>
+  </div>
+  <div class="select">
+    <div class="select__header" (click)="openSelect($event)">
+      <div className="select__title">
+        User Name
+      </div>
+    </div>
+    <ul class="select__body" *ngIf="isAccountOpen">
+      <li class="select__option">kirill.demidov.1995@mail.ru</li>
+      <li class="select__option">andreq-demidov@mail.ru</li>
+      <li class="select__option">only.forgame.post@mail.ru</li>
+    </ul>
+  </div>
+
+  <input class="modal__input" type="text" placeholder="account" [(ngModel)]="item.account">
+  <input class="modal__input" type="text" placeholder="userName" [(ngModel)]="item.userName">
+  <input class="modal__input" type="text" placeholder="email" [(ngModel)]="item.email">
+  <input class="modal__input" type="text" placeholder="password" [(ngModel)]="item.password">
+  <input class="modal__input" type="text" placeholder="pin" [(ngModel)]="item.pin">
   <button (click)="addItem(item)">Добавить</button>
 </div>
